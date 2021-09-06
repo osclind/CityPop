@@ -5,20 +5,32 @@ import Jumbotron from "react-bootstrap/Jumbotron";
 import Container from "react-bootstrap/Container";
 import HomePresenter from './HomePresenter';
 import SearchPresenter from "./SearchPresenter";
+import {Switch, Route, useHistory} from 'react-router-dom';
 
 function App() {
   PopSource.searchCityName("Paris, fr").then(result => console.log(result)).catch(e => console.error(e));
   PopSource.searchCountryName("fr").then(result => console.log(result)).catch(e => console.error(e));
-
+  const history = useHistory();
   return (
     <div className="App">
-      <Jumbotron fluid className={"mt-5 mb-5"}>
+      <Jumbotron fluid className={"mt-5 mb-5"} role={"button"} onClick={() => {
+        history.push("/");
+      }}>
         <Container>
           <h1>CityPop</h1>
         </Container>
       </Jumbotron>
-      <HomePresenter/>
-      <SearchPresenter searchByCity={true} searchByCountry={false}/>
+      <Switch>
+        <Route exact path="/">
+          <HomePresenter/>
+        </Route>
+      <Route exact path="/city">
+        <SearchPresenter searchByCity={true} searchByCountry={false}/>
+      </Route>
+      <Route exact path="/country">
+        <SearchPresenter searchByCity={false} searchByCountry={true}/>
+      </Route>
+      </Switch>
     </div>
   );
 }
