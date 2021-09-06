@@ -1,8 +1,10 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import '../css/App.css';
+import PopSource from "../code/popSource";
 
 function App() {
+  PopSource.searchCityName("Paris, fr").then(result => console.log(result)).catch(e => console.error(e));
+  PopSource.searchCountryName("fr").then(result => console.log(result)).catch(e => console.error(e));
   return (
     <div className="App">
       <header className="App-header">
