@@ -36,3 +36,9 @@
     transform: rotate(360deg);
   }
 }
+
+
+/*********************** Self-defined *****************/
+.searchBox {
+  max-width: 50%;
+}
