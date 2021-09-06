@@ -1,10 +1,12 @@
 import HomeView from "../code/views/homeView";
+import {useHistory} from 'react-router-dom';
 
 function HomePresenter(props: {}) {
   const sayHello = () => {
     console.log("Hello World!");
-  }
-  return <HomeView sayHello={sayHello} setSearchState={(destination: string)=>console.log("Show " + destination + " search view")}/>
+  };
+  const history = useHistory();
+  return <HomeView sayHello={sayHello} redirect={(destination: string)=>history.push(destination)}/>
 }
 
 export default HomePresenter;
