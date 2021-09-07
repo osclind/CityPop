@@ -13,13 +13,13 @@ const PopSource = {
       name: "",
       country: "",
       isNameRequired: "true",
-      orderby: "population",
+      orderby: "relevance",
       username: uName
     };
     try {
       const searchString: string[] = city.split(",");
-      query.name = searchString[0];
-      query.country = searchString[1];
+      query.name = searchString[0].trim();
+      query.country = searchString[1].trim();
     } catch (e) {
       query.name = city;
     }

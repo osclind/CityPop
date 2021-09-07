@@ -1,6 +1,5 @@
 import React from 'react';
 import '../css/App.css';
-import PopSource from "../code/popSource";
 import Jumbotron from "react-bootstrap/Jumbotron";
 import Container from "react-bootstrap/Container";
 import HomePresenter from './HomePresenter';
@@ -8,8 +7,6 @@ import SearchPresenter from "./SearchPresenter";
 import {Switch, Route, useHistory} from 'react-router-dom';
 
 function App() {
-  PopSource.searchCityName("Paris, fr").then(result => console.log(result)).catch(e => console.error(e));
-  PopSource.searchCountryName("fr").then(result => console.log(result)).catch(e => console.error(e));
   const history = useHistory();
   return (
     <div className="App">

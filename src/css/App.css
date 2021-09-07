@@ -42,3 +42,8 @@
 .searchBox {
   max-width: 50%;
 }
+
+.center-content {
+  width: 18rem;
+  margin: auto;
+}
