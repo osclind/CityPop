@@ -15,6 +15,7 @@ function App() {
       }}>
         <Container>
           <h1>CityPop</h1>
+          <p>Click me at any point to go back and choose another search mode</p>
         </Container>
       </Jumbotron>
       <Switch>
