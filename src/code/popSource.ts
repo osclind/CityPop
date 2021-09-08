@@ -3,7 +3,7 @@ import uName from "./username";
 const PopSource = {
   url: "http://api.geonames.org/searchJSON?",
   searchCityName: (city: string) => {
-    let query: {
+    const query: {
       name: string,
       isNameRequired: string,
       username: string,
@@ -29,17 +29,27 @@ const PopSource = {
     return PopSource.sendRequest(new URLSearchParams(query).toString());
   },
   searchCountryName: (country: string) => {
-    const query = {
-      "name": country,
-      "orderby": "relevance",
-      "featureClass": "A",
-      "username": uName,
+    const query: {
+      name: string,
+      username: string,
+      orderby: string,
+      featureClass: string,
+    } = {
+      name: country,
+      orderby: "relevance",
+      featureClass: "A",
+      username: uName,
     };
     if (PopSource.queryEmpty(country)) return undefined;
     return PopSource.sendRequest(new URLSearchParams(query).toString());
   },
   getMostPopulatedCitiesOfCountry: (countryCode: string) => {
-    const query = {
+    const query: {
+      country: string,
+      username: string,
+      orderby: string,
+      featureClass: string,
+    } = {
       country: countryCode,
       orderby: "population",
       featureClass: "P",

@@ -1,7 +1,7 @@
 import FormControl from "react-bootstrap/FormControl";
 import InputGroup from "react-bootstrap/InputGroup";
 import Search from "../../search.png";
-import {Form} from "react-bootstrap";
+import Form from "react-bootstrap/Form";
 import {KeyboardEvent, FormEvent, RefObject} from "react";
 
 function SearchView(props: {searchByCity: boolean, searchByCountry: boolean, onSearch: Function, searchRef: RefObject<HTMLInputElement>}) {
