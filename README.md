@@ -1,46 +1,37 @@
-# Getting Started with Create React App
+# CityPop
+_A city population query application_
+______________________
+
+## What is it and how do I use it?
+This app will give you information on the population of cities of the world.
+You have the choice of either searching for a country to see the top 3 populated cities of that country, or search for an individual city.
+If there are two (or more) cities with the same name, add the country code to make the search more specified.
+
+## Setting up the development environment
+First, make sure to have [NPM and Node](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) installed on your system.
+You can check the existence of these programmes in your system with `npm -v` and `node -v`.
+Then, clone this repository and cd into it `cd citypop`.
+From the repo root, run `npm start` and wait until the server is up.
+Once the server is up, open a browser window and navigate to `http://localhost:3000`.
+You can now make changes to the source code, and they will (upon re-compilation) show up automatically in the browser window!
+
+### TL;DR
+1. Check that NPM and Node is installed or install them
+2. Clone and navigate to repository
+3. Run `npm start`
+4. Open a browser and navigate to `http://localhost:3000`
+5. Start coding!
+
+#### API-key
+The GeoNames api needs a username to be sent with each query.
+For the project to function properly, create the file `username.ts` in the same folder as `popSource.ts` and add the following content to it:
+
+```
+const uName = "<YOUR USERNAME HERE>";
+
+export default uName;
+```
+
+#### Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `yarn start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).

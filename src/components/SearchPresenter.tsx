@@ -5,6 +5,10 @@ import PopSource from "../code/popSource";
 import CityResultsView from "../code/views/cityResultsView";
 import CountryResultsView from "../code/views/countryResultsView";
 
+/**
+ * A controller component for the search and search results views
+ * @param props searchByCity and searchByCountry are booleans that flag whether the user wants to search by country or city
+ */
 function SearchPresenter(props: {searchByCity: boolean, searchByCountry: boolean}) {
   // State variables
   const [promise, setPromise]: [Promise<any> | undefined, Dispatch<Promise<any> | undefined>] = React.useState();
@@ -17,10 +21,19 @@ function SearchPresenter(props: {searchByCity: boolean, searchByCountry: boolean
   const searchRef: RefObject<HTMLInputElement> = React.createRef<HTMLInputElement>();
 
   // Callbacks used in views
+  /**
+   * showCity will take a city object from CountryResultsView and
+   * toggle states so the city shows up in CityResultsView
+   * @param city a city object
+   */
   const showCity: (city: any) => void = React.useCallback((city: any) => {
     setCityChosen(true);
     setData(city);
   }, []);
+  /**
+   * goBack is essentially a reset-function that resets all the states of the Presenter
+   * component in order to search for something else
+   */
   const goBack: () => void = React.useCallback(() => {
     setData(undefined);
     setError(undefined);
@@ -28,6 +41,10 @@ function SearchPresenter(props: {searchByCity: boolean, searchByCountry: boolean
     setCityChosen(false);
     setFetched(false);
   }, []);
+  /**
+   * onSearch is a callback that takes the search string and creates an api call with it
+   * @param text the text input from the user to be supplied to the search call
+   */
   const onSearch: (text: string) => void = React.useCallback((text: string) => {
     setData(undefined);
     setError(undefined);
@@ -68,7 +85,8 @@ function SearchPresenter(props: {searchByCity: boolean, searchByCountry: boolean
     ||
     (props.searchByCountry && <CountryResultsView results={data}
                                                   goBack={goBack}
-                                                  showCity={showCity}/>)}
+                                                  showCity={showCity}/>)
+    }
     </div>
   );
 }
