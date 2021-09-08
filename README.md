@@ -12,15 +12,17 @@ First, make sure to have [NPM and Node](https://docs.npmjs.com/downloading-and-i
 You can check the existence of these programmes in your system with `npm -v` and `node -v`.
 Then, clone this repository and cd into it `cd citypop`.
 From the repo root, run `npm start` and wait until the server is up.
+If `npm start` fails, run `npm install` and try again.
 Once the server is up, open a browser window and navigate to `http://localhost:3000`.
 You can now make changes to the source code, and they will (upon re-compilation) show up automatically in the browser window!
 
 ### TL;DR
 1. Check that NPM and Node is installed or install them
 2. Clone and navigate to repository
-3. Run `npm start`
-4. Open a browser and navigate to `http://localhost:3000`
-5. Start coding!
+3. Run `npm install`
+4. Run `npm start`
+5. Open a browser and navigate to `http://localhost:3000`
+6. Start coding!
 
 #### API-key
 The GeoNames api needs a username to be sent with each query.
