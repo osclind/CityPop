@@ -6,10 +6,14 @@ import HomePresenter from './HomePresenter';
 import SearchPresenter from "./SearchPresenter";
 import {Switch, Route, useHistory} from 'react-router-dom';
 
+/**
+ * The app root, this is where the overall app is controlled
+ */
 function App() {
   const history = useHistory();
   return (
     <div className="App">
+      {/* The jumbotron below is the "banner" at the top, acting as the home-button */}
       <Jumbotron fluid className={"mt-5 mb-5"} role={"button"} onClick={() => {
         history.push("/");
       }}>
