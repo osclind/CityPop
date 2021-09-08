@@ -22,6 +22,16 @@ You can now make changes to the source code, and they will (upon re-compilation)
 4. Open a browser and navigate to `http://localhost:3000`
 5. Start coding!
 
+#### API-key
+The GeoNames api needs a username to be sent with each query.
+For the project to function properly, create the file `username.ts` in the same folder as `popSource.ts` and add the following content to it:
+
+```
+const uName = "<YOUR USERNAME HERE>";
+
+export default uName;
+```
+
 #### Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
