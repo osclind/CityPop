@@ -3,12 +3,12 @@ import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 
 function CountryResultsView(props: {results: any, goBack: () => void, showCity: (city: any) => void}) {
-  console.log(props.results);
   return <div>
     <h2>{props.results.geonames[0]?.countryName}</h2>
     {
       props.results.geonames?.slice(0,3).map((c: any) => {
         return <Card className={"center-content mt-2"}
+                     key={c.geonameId}
                      onClick={() => {
                        props.showCity(c);
                      }}

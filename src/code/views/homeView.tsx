@@ -1,16 +1,23 @@
-function HomeView(props: {sayHello: Function, redirect: Function}) {
-  console.log("rendered");
-  return <div className={"col-6 justify-content-center btn-group"} role="group" aria-label={"Choice group"}>
-    <button type={"button"} onClick={()=> {
-      props.sayHello();
-      props.redirect("/country");
-    }} className={"btn btn-outline-dark btn-lg"}>Search by country</button>
-    <p> </p>
-    <button type={"button"} onClick={()=> {
-      props.sayHello();
-      props.redirect("/city");
-    }} className={"btn btn-outline-dark btn-lg"}>Search by city</button>
-  </div>
+import ButtonGroup from "react-bootstrap/ButtonGroup";
+import Button from "react-bootstrap/Button";
+
+function HomeView(props: {redirect: Function}) {
+  return <ButtonGroup className={"col-6 justify-content-center"} aria-label={"Choice group"}>
+    <Button variant={"outline-dark"}
+            size={"lg"}
+            onClick={()=> {
+              props.redirect("/country");
+            }}>
+      Search by country
+    </Button>
+    <Button variant={"outline-dark"}
+            size={"lg"}
+            onClick={()=> {
+              props.redirect("/city");
+            }}>
+      Search by city
+    </Button>
+  </ButtonGroup>
 }
 
 export default HomeView;
